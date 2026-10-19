@@ -1,7 +1,7 @@
 # מערכת העריכה של האתר. השורה היחידה שצריך לשנות: repo (שם המשתמש בגיטהאב / שם המאגר)
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/radio-hakol-yoatzim
+  repo: yuvalshaltiell-droid/radio-hakol-yoatzim
   branch: main
 
 locale: he
