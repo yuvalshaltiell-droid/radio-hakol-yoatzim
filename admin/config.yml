@@ -48,3 +48,39 @@ collections:
           - { label: "משפט מעל כפתור הוואטסאפ (אחרי המייסדת)", name: strip2, widget: string }
           - { label: "כותרת סיום", name: closingTitle, widget: string }
           - { label: "טקסט סיום", name: closingLead, widget: text }
+      - name: english
+        label: English page (דף באנגלית)
+        file: content/site-en.json
+        format: json
+        fields:
+          - { label: "כותרת ראשית (שורה לכל משפט)", name: heroTitle, widget: text }
+          - { label: "המסר המרכזי", name: heroLead, widget: text }
+          - { label: "טקסט כפתור הוואטסאפ", name: ctaLabel, widget: string }
+          - { label: "מספר וואטסאפ / טלפון", name: phone, widget: string }
+          - { label: "ההודעה שנפתחת בוואטסאפ", name: waText, widget: text }
+          - { label: "ערוץ בינלאומי – כותרת", name: intlTitle, widget: string }
+          - { label: "ערוץ בינלאומי – טקסט", name: intlLead, widget: text }
+          - label: "ערוץ בינלאומי – תמונות"
+            name: hosts
+            widget: list
+            fields:
+              - { label: "תמונה", name: image, widget: image }
+              - { label: "תיאור (עיר / תפקיד)", name: caption, widget: string }
+          - { label: "משפט מעל כפתור הוואטסאפ (אחרי הערוץ הבינלאומי)", name: strip0, widget: string }
+          - { label: "יתרונות – כותרת", name: benefitsTitle, widget: string }
+          - { label: "יתרונות – טקסט פתיחה", name: benefitsLead, widget: string }
+          - label: "יתרונות"
+            name: benefits
+            widget: list
+            fields:
+              - { label: "כותרת", name: title, widget: string }
+              - { label: "הסבר", name: text, widget: text }
+          - { label: "משפט מעל כפתור הוואטסאפ (אחרי היתרונות)", name: strip1, widget: string }
+          - { label: "תמונת המייסדת", name: founderPhoto, widget: image }
+          - { label: "שם המייסדת", name: founderName, widget: string }
+          - { label: "כותרת המילה האישית", name: founderTitle, widget: string }
+          - { label: "המילה האישית (פסקה לכל שורה)", name: founderText, widget: text }
+          - { label: "משפט מודגש", name: founderQuote, widget: string }
+          - { label: "משפט מעל כפתור הוואטסאפ (אחרי המייסדת)", name: strip2, widget: string }
+          - { label: "כותרת סיום", name: closingTitle, widget: string }
+          - { label: "טקסט סיום", name: closingLead, widget: text }
