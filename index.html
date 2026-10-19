@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>רדיו הקול שלנו – היועצים</title>
+<meta name="description" content="הפכו את הידע והניסיון שלכם לתוכנית רדיו מקצועית בערוץ היועצים של רדיו הקול שלנו.">
+<meta property="og:title" content="רדיו הקול שלנו – היועצים">
+<meta property="og:description" content="המומחיות שלכם. הבמה שלנו. הקול שכולם יכירו.">
+<meta property="og:image" content="images/founder.jpg">
+<link rel="icon" href="images/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;800&family=Assistant:wght@400;600;700&display=swap">
+<style>
+html,body{margin:0}
+[hidden]{display:none!important}
+img{max-width:100%}
+/* Layout: on-air studio at night — a dark navy band stack, one cyan "signal" accent, RTL, single-column story ending in a form */
+:root{
+  --ink:#050d22;          /* page ground */
+  --navy:#0a1838;         /* raised bands */
+  --panel:#0f2149;        /* cards, inputs */
+  --line:#1e3a72;         /* hairlines */
+  --royal:#2747b8;        /* logo blue */
+  --cyan:#3fc3f0;         /* signal accent */
+  --fg:#eaf2ff;
+  --muted:#9db2d8;
+  --onair:#ff4d5e;
+  --ok:#3fd69b;
+  --wa:#25d366;
+  --f-display:"Rubik","Assistant",system-ui,sans-serif;
+  --f-body:"Assistant","Rubik",system-ui,sans-serif;
+  --r:14px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.65;direction:rtl}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ink)}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+a{color:var(--cyan)}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+
+/* top bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--ink) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:10px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--f-display);font-weight:700;font-size:16px;color:var(--fg);text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:50%;background:#fff;padding:2px;object-fit:contain}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--cyan);letter-spacing:.04em}
+.bar-actions{display:flex;gap:8px;align-items:center}
+.btn{font-family:var(--f-display);font-weight:500;font-size:16px;border:0;border-radius:999px;padding:12px 24px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:transform .15s,box-shadow .15s,background .15s}
+.btn-primary{background:var(--cyan);color:var(--ink);box-shadow:0 0 0 0 color-mix(in srgb,var(--cyan) 40%,transparent)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 8px 30px -6px color-mix(in srgb,var(--cyan) 70%,transparent)}
+.btn-ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.btn-ghost:hover{border-color:var(--cyan)}
+.btn-sm{padding:8px 16px;font-size:14px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:
+  radial-gradient(900px 420px at 85% -10%,color-mix(in srgb,var(--royal) 55%,transparent),transparent 70%),
+  radial-gradient(700px 380px at 0% 110%,color-mix(in srgb,var(--cyan) 18%,transparent),transparent 70%),var(--ink)}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center;padding-block:72px 80px}
+.onair{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-display);font-size:13px;letter-spacing:.22em;color:var(--onair);border:1px solid color-mix(in srgb,var(--onair) 50%,transparent);border-radius:6px;padding:5px 12px;direction:ltr}
+.onair i{width:8px;height:8px;border-radius:50%;background:var(--onair);box-shadow:0 0 12px var(--onair);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+.hero h1{font-size:clamp(34px,5.6vw,62px);font-weight:800;margin-top:22px;letter-spacing:-.01em}
+.hero h1 .l{display:block}
+.hero h1 .l:last-child{color:var(--cyan)}
+.lead{font-size:clamp(17px,1.9vw,20px);color:var(--muted);max-width:34em;margin-top:22px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.tags{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px;color:var(--muted);font-size:15px}
+.tags span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cyan);margin-inline-end:8px;vertical-align:middle}
+
+.console{position:relative;background:linear-gradient(160deg,var(--navy),var(--ink));border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;gap:20px;justify-items:center}
+.console .logo{width:min(220px,60%);aspect-ratio:1;border-radius:50%;background:#fff;padding:10px;box-shadow:0 0 0 8px color-mix(in srgb,var(--cyan) 12%,transparent),0 20px 60px -10px color-mix(in srgb,var(--royal) 80%,transparent);object-fit:contain;max-width:100%}
+.wave{display:flex;align-items:center;gap:4px;height:56px;width:100%;justify-content:center}
+.wave span{width:5px;border-radius:3px;background:linear-gradient(var(--cyan),var(--royal));height:20%;animation:eq 1.2s ease-in-out infinite}
+@keyframes eq{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+.readout{display:flex;justify-content:space-between;width:100%;font-family:var(--f-display);font-size:12px;color:var(--muted);letter-spacing:.12em;direction:ltr;border-top:1px solid var(--line);padding-top:14px;font-variant-numeric:tabular-nums}
+.readout b{color:var(--cyan);font-weight:500}
+
+/* sections */
+section{padding-block:80px}
+.eyebrow{font-family:var(--f-display);font-size:14px;letter-spacing:.14em;color:var(--cyan);font-weight:500}
+.sec-head{display:grid;gap:12px;max-width:640px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+.sec-head p{color:var(--muted)}
+
+.benefits{background:var(--navy);border-block:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ben{background:var(--navy);padding:28px 26px;display:grid;gap:14px;align-content:start;min-width:0;transition:background .2s}
+.ben:hover{background:var(--panel)}
+.ben svg{width:30px;height:30px;stroke:var(--cyan);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.ben h3{font-size:19px;font-weight:500;line-height:1.35}
+.ben p{color:var(--muted);font-size:15px}
+
+/* founder */
+.founder .wrap{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:center}
+.photo{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:20px;overflow:hidden;background:repeating-linear-gradient(135deg,var(--navy) 0 12px,var(--panel) 12px 24px);border:1px solid var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:14px}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .ph{display:grid;gap:8px;justify-items:center;padding:16px}
+.photo .ph svg{width:44px;height:44px;stroke:var(--muted);fill:none;stroke-width:1.4}
+.mic-tag{position:absolute;bottom:14px;inset-inline-start:14px;background:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:13px;font-family:var(--f-display);color:var(--fg)}
+.letter{display:grid;gap:18px;max-width:600px}
+.letter h2{font-size:clamp(26px,3.2vw,36px)}
+.letter p{color:var(--muted);font-size:18px}
+.letter blockquote{margin:8px 0 0;padding:18px 22px;border-inline-start:3px solid var(--cyan);background:color-mix(in srgb,var(--cyan) 7%,transparent);border-radius:0 10px 10px 0;font-family:var(--f-display);font-size:clamp(19px,2.2vw,24px);font-weight:500;color:var(--fg)}
+.sig{font-family:var(--f-display);color:var(--fg);font-weight:500}
+.sig span{display:block;font-weight:300;font-size:14px;color:var(--muted)}
+
+/* closing + form */
+.closing{background:radial-gradient(800px 400px at 50% 0%,color-mix(in srgb,var(--royal) 45%,transparent),transparent 70%),var(--navy);border-top:1px solid var(--line)}
+.closing .wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.closing h2{font-size:clamp(30px,4.2vw,48px);font-weight:800}
+.closing .lead{margin-top:16px}
+.contact-alt{margin-top:28px;display:grid;gap:6px;font-size:15px;color:var(--muted)}
+.contact-alt b{font-family:var(--f-display);font-size:20px;color:var(--fg);direction:ltr;unicode-bidi:isolate;font-weight:500;letter-spacing:.03em}
+form{background:var(--ink);border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;gap:16px;min-width:0}
+.field{display:grid;gap:6px}
+label{font-size:14px;font-weight:600;color:var(--fg)}
+input,textarea,select{font:inherit;font-size:16px;color:var(--fg);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px color-mix(in srgb,var(--cyan) 22%,transparent)}
+input[type=tel],input[type=email]{direction:ltr;text-align:right}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.err{color:var(--onair);font-size:14px;min-height:1px}
+.fine{font-size:13px;color:var(--muted)}
+.done{display:grid;gap:12px;text-align:center;padding:28px 10px}
+.done svg{width:52px;height:52px;margin:0 auto;stroke:var(--ok);fill:none;stroke-width:1.8}
+.done h3{font-size:24px}
+
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+
+
+/* WhatsApp */
+.btn-wa{background:var(--wa);color:#04210f;font-weight:500}
+.btn-wa:hover{transform:translateY(-1px);box-shadow:0 8px 30px -6px color-mix(in srgb,var(--wa) 60%,transparent)}
+.wa-ic{width:22px;height:22px;fill:currentColor;flex:none}
+.btn-sm .wa-ic{width:18px;height:18px}
+.btn-lg{font-size:19px;padding:16px 32px}
+.wa-cta{display:inline-flex;flex-direction:column;align-items:center;gap:6px}
+.wa-num{font-size:14px;color:var(--muted);text-align:center}
+.bar .wa-num{font-size:11px;line-height:1.2}
+.bar .wa-cta{gap:3px}
+.wa-num b{font-family:var(--f-display);font-weight:500;color:var(--fg);direction:ltr;unicode-bidi:isolate;letter-spacing:.03em}
+.wa-strip{margin-top:48px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;padding:22px 26px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(90deg,color-mix(in srgb,var(--royal) 22%,transparent),transparent)}
+.wa-strip p{font-family:var(--f-display);font-size:20px;font-weight:500;flex:1 1 220px}
+.closing-in{display:grid;justify-items:center;text-align:center;gap:18px;max-width:760px}
+.closing-in .lead{margin-inline:auto;margin-top:0}
+.footer-links{display:flex;gap:16px;flex-wrap:wrap}
+
+
+/* international */
+.hero-map{position:absolute;inset-inline:0;top:50%;transform:translateY(-50%);width:100%;max-width:none;height:auto;opacity:.22;mix-blend-mode:screen;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse at center,#000 40%,transparent 75%);mask-image:radial-gradient(ellipse at center,#000 40%,transparent 75%)}
+.hero .wrap{position:relative}
+.hosts{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.host{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:389/320;max-width:100%;background:var(--navy)}
+.host img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:640px){.hosts{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+@media (max-width:860px){
+  .hero .wrap,.founder .wrap,.closing .wrap{grid-template-columns:1fr;gap:36px}
+  .hero .wrap{padding-block:44px 56px}
+  .console{order:-1;padding:20px}
+  .console .logo{width:150px}
+  .founder .photo{max-width:300px}
+  section{padding-block:60px}
+}
+@media (max-width:520px){
+  .row2{grid-template-columns:1fr}
+  .brand small{display:none}
+  
+  form{padding:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/logo.jpg" alt="לוגו רדיו הקול שלנו"><span>רדיו הקול שלנו<small>ערוץ היועצים</small></span></a>
+    <div class="bar-actions">
+      
+      <span class="wa-cta"><a class="btn btn-wa btn-sm hdr-wa" data-wa href="https://wa.me/972544683128" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span>וואטסאפ</span></a><span class="wa-num"><b data-k="phone">054-4683128</b></span></span>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <img class="hero-map" src="images/worldmap.jpg" alt="" aria-hidden="true">
+    <div class="wrap">
+      <div>
+        <span class="onair"><i></i>ON AIR</span>
+        <h1 id="heroTitle"><span class="l">המומחיות שלכם.</span><span class="l">הבמה שלנו.</span><span class="l">הקול שכולם יכירו.</span></h1>
+        <p class="lead" data-k="heroLead">הפכו את הידע והניסיון שלכם לתוכנית רדיו מקצועית, בנו אוטוריטה בתחומכם, הגדילו חשיפה והגיעו לקהלים חדשים.</p>
+        <div class="hero-cta">
+          <span class="wa-cta"><a class="btn btn-wa " data-wa href="https://wa.me/972544683128" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span data-k="ctaLabel">גם אני רוצה תוכנית רדיו משלי</span></a><span class="wa-num">וואטסאפ / טלפון: <b data-k="phone">054-4683128</b></span></span>
+          <a class="btn btn-ghost" href="#benefits">מה מקבלים?</a>
+        </div>
+        <div class="tags"><span>יועצים</span><span>מאמנים</span><span>מטפלים</span><span>מומחים</span></div>
+      </div>
+      <div class="console" aria-hidden="true">
+        <img class="logo" src="images/logo.jpg" alt="">
+        <div class="wave" id="wave"></div>
+        <div class="readout"><span>CH · <b>היועצים</b></span><span>LIVE · AUDIO + VIDEO</span><span>EST. <b>2019</b></span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="intl" id="intl">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">ערוץ היועצים הבינלאומי</span>
+        <h2 data-k="intlTitle">שדרו אלינו מכל מקום בעולם</h2>
+        <p data-k="intlLead">הערוץ החדש והבינלאומי שלנו. לונדון, ברלין, טורונטו או תל אביב: מכל מקום שיש בו אינטרנט, אתם באוויר.</p>
+      </div>
+      <div class="hosts" id="hostsGrid">
+          <figure class="host"><img src="images/host1.jpg" alt="יועצת · לונדון" loading="lazy"></figure>
+          <figure class="host"><img src="images/host2.jpg" alt="יועץ · סינגפור" loading="lazy"></figure>
+          <figure class="host"><img src="images/host3.jpg" alt="יועצת · ניירובי" loading="lazy"></figure>
+          <figure class="host"><img src="images/host4.jpg" alt="יועץ · סאו פאולו" loading="lazy"></figure>
+          <figure class="host"><img src="images/host5.jpg" alt="יועצת · ברלין" loading="lazy"></figure>
+          <figure class="host"><img src="images/host6.jpg" alt="יועץ · טורונטו" loading="lazy"></figure>
+      </div>
+    </div>
+    <div class="wrap"><div class="wa-strip"><p data-k="strip0"></p><span class="wa-cta"><a class="btn btn-wa " data-wa href="https://wa.me/972544683128" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span data-k="ctaLabel">גם אני רוצה תוכנית רדיו משלי</span></a><span class="wa-num">וואטסאפ / טלפון: <b data-k="phone">054-4683128</b></span></span></div></div>
+  </section>
+
+  <section class="benefits" id="benefits">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">מה מקבלים</span>
+        <h2 data-k="benefitsTitle">כל מה שצריך כדי שהקול שלכם יישמע</h2>
+        <p data-k="benefitsLead">אנחנו דואגים לטכנולוגיה, לשידור ולבמה. אתם מגיעים עם הידע.</p>
+      </div>
+      <div class="grid" id="benefitsGrid"></div>
+    </div>
+    <div class="wrap"><div class="wa-strip"><p data-k="strip1"></p><span class="wa-cta"><a class="btn btn-wa " data-wa href="https://wa.me/972544683128" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span data-k="ctaLabel">גם אני רוצה תוכנית רדיו משלי</span></a><span class="wa-num">וואטסאפ / טלפון: <b data-k="phone">054-4683128</b></span></span></div></div>
+  </section>
+
+  <section class="founder" id="founder">
+    <div class="wrap">
+      <div class="photo" id="photo"><img id="photoImg" src="images/founder.jpg" alt="חדווה שאלתיאל">
+        <div class="ph" id="photoPh" hidden><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg><span>כאן תופיע תמונת המייסדת</span></div>
+        <span class="mic-tag">מייסדת התחנה</span>
+      </div>
+      <div class="letter">
+        <span class="eyebrow">מילה אישית מהמייסדת</span>
+        <h2 data-k="founderTitle">לכל אדם בעל ידע יש קול שראוי להישמע</h2>
+        <div id="founderText" style="display:grid;gap:14px"></div>
+        <blockquote data-k="founderQuote">אתם מביאים את הידע ואת הקול. אנחנו נותנים להם במה.</blockquote>
+        <p class="sig"><span data-k="founderName">חדווה שאלתיאל</span><span>מייסדת רדיו הקול שלנו</span></p>
+      </div>
+    </div>
+    <div class="wrap"><div class="wa-strip"><p data-k="strip2"></p><span class="wa-cta"><a class="btn btn-wa " data-wa href="https://wa.me/972544683128" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span data-k="ctaLabel">גם אני רוצה תוכנית רדיו משלי</span></a><span class="wa-num">וואטסאפ / טלפון: <b data-k="phone">054-4683128</b></span></span></div></div>
+  </section>
+
+  <section class="closing" id="join">
+    <div class="wrap closing-in">
+      <span class="eyebrow">הצטרפות לערוץ</span>
+      <h2 data-k="closingTitle">הקול שלכם יכול להגיע רחוק יותר!</h2>
+      <p class="lead" data-k="closingLead">שלחו לנו הודעה בוואטסאפ ונחזור אליכם לשיחת היכרות קצרה על התוכנית שלכם.</p>
+      <span class="wa-cta"><a class="btn btn-wa btn-lg" data-wa href="https://wa.me/972544683128" target="_blank" rel="noopener"><svg class="wa-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.2-.2-.5-.3z"/></svg><span data-k="ctaLabel">גם אני רוצה תוכנית רדיו משלי</span></a><span class="wa-num">וואטסאפ / טלפון: <b data-k="phone">054-4683128</b></span></span>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© רדיו הקול שלנו · ערוץ היועצים · משדרים מאז 2019</span>
+    <span>הכי ישראלי שיש</span>
+  </div>
+</footer>
+
+
+<script>window.__SITE__ = {"heroTitle": "המומחיות שלכם.\nהבמה שלנו.\nהקול שכולם יכירו.", "heroLead": "הפכו את הידע והניסיון שלכם לתוכנית רדיו מקצועית, בנו אוטוריטה בתחומכם, הגדילו חשיפה והגיעו לקהלים חדשים.", "ctaLabel": "גם אני רוצה תוכנית רדיו משלי", "phone": "054-4683128", "waText": "שלום חדווה, אני רוצה לשמוע על תוכנית רדיו משלי בערוץ היועצים.", "intlTitle": "שדרו אלינו מכל מקום בעולם", "intlLead": "הערוץ החדש והבינלאומי שלנו. לונדון, ברלין, טורונטו או תל אביב: מכל מקום שיש בו אינטרנט, אתם באוויר.", "strip0": "גם אתם יכולים לשדר מכל מקום בעולם.", "hosts": [{"image": "/images/host1.jpg", "caption": "יועצת · לונדון"}, {"image": "/images/host2.jpg", "caption": "יועץ · סינגפור"}, {"image": "/images/host3.jpg", "caption": "יועצת · ניירובי"}, {"image": "/images/host4.jpg", "caption": "יועץ · סאו פאולו"}, {"image": "/images/host5.jpg", "caption": "יועצת · ברלין"}, {"image": "/images/host6.jpg", "caption": "יועץ · טורונטו"}], "benefitsTitle": "כל מה שצריך כדי שהקול שלכם יישמע", "benefitsLead": "אנחנו דואגים לטכנולוגיה, לשידור ולבמה. אתם מגיעים עם הידע.", "benefits": [{"title": "תוכנית רדיו אישית", "text": "תוכנית קבועה הנושאת את שמכם ומזוהה איתכם ועם התחום שלכם."}, {"title": "שידורים חיים באודיו ובווידאו", "text": "המאזינים שומעים אתכם, וגם רואים אתכם, בזמן אמת."}, {"title": "שידור לרשתות החברתיות", "text": "התוכנית יכולה לעלות במקביל לרשתות שלכם ולהגיע לקהל קיים וחדש."}, {"title": "שידור מכל מקום בעולם", "text": "בלי אולפן ובלי נסיעות. מחשב, אוזניות ומיקרופון, ואתם באוויר."}, {"title": "אוטוריטה ומותג אישי", "text": "תוכנית רדיו ממצבת אתכם כקול המוביל בתחום שלכם."}, {"title": "חשיפה, אמון והזדמנויות", "text": "מאזינים שמכירים את הקול שלכם הופכים ללקוחות שסומכים עליכם."}, {"title": "ראיונות ואירוח מומחים", "text": "ארחו עמיתים, לקוחות ואנשי מקצוע, והרחיבו את הרשת המקצועית שלכם."}], "strip1": "רוצים תוכנית משלכם? דברו איתנו עכשיו.", "founderPhoto": "/images/founder.jpg", "founderName": "חדווה שאלתיאל", "founderTitle": "לכל אדם בעל ידע יש קול שראוי להישמע", "founderText": "אני מאמינה שלכל אדם בעל ידע וניסיון יש קול שראוי להישמע.\nמאז הקמת תחנת הרדיו בשנת 2019, למדתי את כוחו של המיקרופון לחבר אנשים וליצור הזדמנויות.\nאת ערוץ \"היועצים\" הקמתי כדי להעניק לאנשי מקצוע במה להשמיע את קולם, לחלוק ידע ולהפוך לאוטוריטה בתחומם.", "founderQuote": "אתם מביאים את הידע ואת הקול. אנחנו נותנים להם במה.", "strip2": "מוכנים להשמיע את הקול שלכם?", "closingTitle": "הקול שלכם יכול להגיע רחוק יותר!", "closingLead": "שלחו לנו הודעה בוואטסאפ ונחזור אליכם לשיחת היכרות קצרה על התוכנית שלכם."};</script>
+<script>
+(() => {
+const ICONS = [
+  '<circle cx="12" cy="8" r="4"/><path d="M12 12v4M8 20h8M6 8a6 6 0 0 0 12 0"/>',
+  '<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
+  '<circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8.2 11l7.6-4M8.2 13l7.6 4"/>',
+  '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/>',
+  '<path d="M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.4 6.8 19.1l1-5.8L3.5 9.2l5.9-.8z"/>',
+  '<path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/>',
+  '<path d="M4 5h11v8H8l-4 3z"/><path d="M15 9h5v8l-3-2h-6v-2"/>'
+];
+const $ = id => document.getElementById(id);
+const wave = $("wave");
+for (let i = 0; i < 28; i++) { const s = document.createElement("span"); s.style.height = (25 + Math.abs(Math.sin(i * 0.9)) * 75) + "%"; s.style.animationDelay = (i * 0.07) + "s"; wave.appendChild(s); }
+const img = p => String(p || "").replace(/^\//, "");
+function waHref(c) {
+  let d = String(c.phone || "").replace(/\D/g, "");
+  if (d.startsWith("0")) d = "972" + d.slice(1);
+  return "https://wa.me/" + d + "?text=" + encodeURIComponent(c.waText || "");
+}
+function render(c) {
+  if (c.heroTitle) $("heroTitle").replaceChildren(...String(c.heroTitle).split("\n").filter(Boolean).map(t => { const s = document.createElement("span"); s.className = "l"; s.textContent = t; return s; }));
+  document.querySelectorAll("[data-k]").forEach(el => { const v = c[el.dataset.k]; if (typeof v === "string" && v) el.textContent = v; });
+  if (Array.isArray(c.benefits)) {
+    const grid = $("benefitsGrid"); grid.replaceChildren();
+    c.benefits.forEach((b, i) => {
+      const el = document.createElement("div"); el.className = "ben";
+      el.innerHTML = '<svg viewBox="0 0 24 24">' + ICONS[i % ICONS.length] + '</svg><h3></h3><p></p>';
+      el.querySelector("h3").textContent = b.title || ""; el.querySelector("p").textContent = b.text || "";
+      grid.appendChild(el);
+    });
+  }
+  if (Array.isArray(c.hosts)) {
+    $("hostsGrid").replaceChildren(...c.hosts.map(h => { const f = document.createElement("figure"); f.className = "host"; const im = document.createElement("img"); im.src = img(h.image); im.alt = h.caption || ""; im.loading = "lazy"; f.appendChild(im); return f; }));
+  }
+  if (c.founderText) $("founderText").replaceChildren(...String(c.founderText).split("\n").filter(s => s.trim()).map(t => { const p = document.createElement("p"); p.textContent = t; return p; }));
+  if (c.founderPhoto) { $("photoImg").src = img(c.founderPhoto); $("photoImg").alt = c.founderName || ""; }
+  document.querySelectorAll("[data-wa]").forEach(a => { a.href = waHref(c); });
+}
+// static fallback already in the HTML; benefits need a first paint
+render(window.__SITE__);
+fetch("content/site.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(c => { if (c) render(c); }).catch(() => {});
+})();
+</script>
+</body>
+</html>
